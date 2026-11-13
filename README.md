@@ -1,46 +1,22 @@
-# Sistemas Web / Banco de Dados
+# Sistemas Web
 
-Repositório com as atividades de Sistemas Web e o projeto JoJo (Node + Express + MySQL).
+Atividade de Sistemas Web: páginas HTML/CSS/JS com um pequeno servidor Express.
 
-## Estrutura
+## Conteúdo
 
-```
-.
-├── index.html, form.html, style.css, script.js, index.js   # atividade simples de Sistemas Web
-├── package.json
-└── projeto-jojo/                                           # projeto completo com banco de dados
-    ├── site/                     # telas (home + 5 CRUDs)
-    ├── index.js                  # servidor Express + API
-    ├── banco.sql                 # cria o jojo_db, as tabelas e os dados
-    ├── banco_jojo_completo.sql   # script único: banco + povoamento
-    ├── povoamento_le5.sql        # só os INSERTs (15+ por tabela)
-    ├── .env.example              # modelo de configuração do MySQL
-    ├── iniciar.bat               # sobe o servidor no Windows
-    └── README.md                 # detalhes do projeto
-```
+- `index.html` — página inicial
+- `form.html` — formulário de cadastro (nome e sobrenome)
+- `style.css` — estilos
+- `index.js` — servidor Express com a rota `/api/lista`
+- `script.js` — scripts da página
 
-## Rodar o projeto com banco
-
-Pré-requisitos: Node.js e MySQL 8 instalados.
-
-```bash
-cd projeto-jojo
-mysql -u root -p --default-character-set=utf8mb4 < banco_jojo_completo.sql
-cp .env.example .env      # no Windows: copy .env.example .env
-# edite o .env e coloque a senha do seu MySQL
-npm install
-npm start
-```
-
-Abra `http://localhost:3000`.
-
-O `.env` não vai para o repositório (está no `.gitignore`) — cada máquina usa o seu.
-
-## Atividade simples de Sistemas Web
+## Como rodar
 
 ```bash
 npm install
 node index.js
 ```
 
-Abre em `http://localhost:3000`.
+Depois abra `http://localhost:3000`.
+
+> O material de banco de dados (LE5) fica no repositório separado `banco-jojo`.
