@@ -1,0 +1,204 @@
+:root {
+    --roxo: #6a3fb5;
+    --roxo-escuro: #4d2b86;
+    --texto: #2b2140;
+    --cinza: #57506b;
+    --fundo: #f0f2f5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    margin: 0;
+    padding: 24px 16px 48px;
+}
+
+a { color: var(--roxo); }
+
+.cabecalho {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+}
+
+.cabecalho h1 {
+    margin: 0 0 4px;
+    color: var(--roxo);
+    font-size: 28px;
+}
+
+.cabecalho p { margin: 0; color: var(--cinza); }
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: 1000px;
+    margin: 0 auto 24px;
+}
+
+.menu a {
+    padding: 9px 14px;
+    background: #fff;
+    border-radius: 8px;
+    color: var(--roxo);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(43, 33, 64, 0.10);
+}
+
+.menu a:hover { background: #efe8fb; }
+
+.linha {
+    display: grid;
+    grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+    gap: 22px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+@media (max-width: 820px) {
+    .linha { grid-template-columns: 1fr; }
+}
+
+.painel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(43, 33, 64, 0.12);
+}
+
+.painel h2 {
+    margin: 0 0 14px;
+    font-size: 19px;
+    color: var(--texto);
+}
+
+form { display: flex; flex-direction: column; }
+
+.campo { display: flex; flex-direction: column; margin-bottom: 12px; }
+
+.campo label { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+
+input[type="text"], select, textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--roxo);
+}
+
+textarea { resize: vertical; }
+
+button {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #fff;
+    background: var(--roxo);
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover { background: var(--roxo-escuro); }
+
+button.secundario { background: #8a84a0; }
+button.secundario:hover { background: #6e6884; }
+
+.acoes-form { display: flex; gap: 8px; margin-top: 4px; }
+.acoes-form button { flex: 1; }
+
+.mensagem {
+    max-width: 1000px;
+    margin: 0 auto 16px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.mensagem.sucesso { background: #e4f7ea; color: #1e6b35; border: 1px solid #a9dfb9; }
+.mensagem.erro { background: #fdeaea; color: #962626; border: 1px solid #f0b4b4; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th, td {
+    padding: 9px 8px;
+    border-bottom: 1px solid #e6e2ee;
+    text-align: left;
+    vertical-align: top;
+}
+
+th { background: #f5f1fc; color: var(--roxo); font-size: 12px; text-transform: uppercase; }
+
+td.acoes { white-space: nowrap; }
+td.acoes button { padding: 6px 9px; font-size: 12px; }
+td.acoes .excluir { background: #b53b3b; }
+td.acoes .excluir:hover { background: #8f2b2b; }
+td.vazio { text-align: center; color: var(--cinza); padding: 24px; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(43, 33, 64, 0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    background: #ece6f7;
+}
+
+.card .texto { padding: 14px 16px 18px; }
+
+.card h3 { margin: 0 0 4px; color: var(--roxo); font-size: 17px; }
+
+.card .parte { margin: 0 0 8px; font-size: 12px; font-weight: 700; color: #8a84a0; }
+
+.card p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--cinza); }
+
+.card .stand {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: #efe8fb;
+    color: var(--roxo);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+footer {
+    max-width: 1000px;
+    margin: 34px auto 0;
+    font-size: 12px;
+    color: #8a84a0;
+    text-align: center;
+}
