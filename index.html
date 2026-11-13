@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Catálogo</title>
+</head>
+
+<body>
+    <a href="form.html">
+        <button>Ir para cadastro</button>
+    </a>
+
+    <div class="todosCards"></div>
+
+    <div class="card">
+        <header><h3>manga de JoJo parte 4</h3></header>
+
+        <img src="jojo.jpg" width="400" height="400"
+             alt="imagem do manga de JoJo parte 4">
+
+        <p>Ambientada em Morioh, a Parte 4 foca em Josuke Higashikata e seu Stand, Shining Diamond.</p>
+        <p>Junto com seus amigos, ele investiga crimes misteriosos e usuários de Stand escondidos na cidade.</p>
+        <p>Unindo mistério, ação e momentos cotidianos com o estilo inconfundível de JoJo.</p>
+
+        <header><h3>manga de JoJo parte 3</h3></header>
+
+        <img src="jojo3.jpg" width="400" height="400"
+             alt="imagem do manga de JoJo parte 3">
+
+        <p>Jotaro Kujo desenvolve o poder "Stand" e viaja do Japão ao Egito com seu avô Joseph Joestar e aliados.</p>
+        <p>Eles enfrentam assassinos enviados por DIO, o vilão que roubou o corpo de Jonathan Joestar.</p>
+        <p>Para salvar a mãe de Jotaro, Holly, cujo Stand a está consumindo.</p>
+
+        <hr>
+
+        <h2>Resultado do fetch()</h2>
+        <div id="resultado">Carregando lista...</div>
+    </div>
+
+<script>
+const container = document.querySelector('.todosCards');
+
+fetch('/api/lista')
+  .then((data) => data.json())
+  .then((listaDeObras) => {
+    listaDeObras.forEach((obra) => {
+      container.innerHTML += `
+        <div class="card">
+          <div class="texto">
+            <h3>${obra.titulo}</h3>
+            <p>${obra.descricao}</p>
+          </div>
+          <div class="img">
+            <img src="${obra.imagem}" alt="${obra.descImagem}">
+          </div>
+        </div>
+      `;
+    });
+  })
+  .catch((err) => console.log(err));
+</script>
+</body>
+</html>

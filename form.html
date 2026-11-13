@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forms</title>
+    <script scr="script.js"></script>
+</head>
+<body>
+    <a href="index.html">
+        <button>Voltar</button>
+    </a>
+    <h2 id = 'titulo'> cadastrar</h2>
+    <form id="meuFormulario">
+        <label for="pnome">primeiro nome: </label><br>
+        <input type="text" id="pnome" name="pnome"><br>
+        <label for="unome">ultimo nome: </label><br>
+        <input type="text" id="unome" name="unome"><br>
+        <button onClick = "alterarFundo()" type="submit">adicionar</button>
+    </form>
+    <p>escolha qual bebida é melhor</p>
+    <form>
+        <input type="radio" id="agua" name="melhorbebida" value="AGUA">
+        <label for="agua">AGUA</label><br>
+        <input type="radio" id="cafezes" name="melhorbebida" value="CAFEZES">
+        <label for="cafezes">CAFEFEZES</label><br>
+
+    </form>
+</body>
+</html>
